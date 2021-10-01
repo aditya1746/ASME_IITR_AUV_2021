@@ -1,10 +1,17 @@
 #include <ros.h>
 #include <std_msgs/String.h>
+#include <std_msgs/Float32.h>
 #include <sauvc_qualification/distance_and_center.h>
 
 int d,x,y;
+float depth;
 
 ros::NodeHandle controller;
+
+void callback (const std_msgs::Float32& msg)
+{
+    depth = msg.data;
+}
 
 void callback (const sauvc_qualification::distance_and_center& msg)
 {
@@ -29,11 +36,13 @@ void decide()
 
     if (d!=0 && x<-5 || x>5)
     {
-        
+
     }
 }
 
 ros::Subscriber<sauvc_qualification::distance_and_center> sub('gate_pos',&callback)
+
+ros::Subscriber<std_msgs::Float32> sub_depth('depth',&callback_depth)
 
 void setup()
 {
