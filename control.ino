@@ -14,8 +14,8 @@ void callback (const sauvc_qualification::distance_and_center& msg)
 
     Serial.println(d);
 
-    if (d<0.8) move_down();
-    else if (d>1.2) move_up();
+    if (depth<0.8) move_down();
+    else if (depth>1.2) move_up();
     else decide();
 }
 
