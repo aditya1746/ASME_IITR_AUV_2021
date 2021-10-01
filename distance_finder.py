@@ -9,12 +9,6 @@ from cv_bridge import CvBridge
 from std_msgs.msg import String
 from sauvc_qualification.msg import distance_and_center
 
-depth_reached = "no"
-
-def callback_depth(msg):
-
-    depth_reached = msg.data
-
 # ============= defining callback function for reading the image published on camera_input topic ====================
 
 def callback(msgs):
