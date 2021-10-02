@@ -26,7 +26,8 @@ def callback(msgs):
 def nothing(x):
 	pass
 
-image=cv2.imread("test.jpeg")
+#image=cv2.imread("test.jpeg")
+image = img
 b, g, r = cv2.split(image)
 
 
